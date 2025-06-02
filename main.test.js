@@ -1,8 +1,54 @@
 /******************
- * YOUR CODE HERE *
- ******************/
+ * YOUR CODE HERE ***/
+const addAll = (numbers) => {
+  return numbers.reduce((sum, current) => sum + current, 0);
+};
+const countSpaces = (str) => {
+  let count = 0;
+  for (const char of str) {
+    if (char === ' ') {
+      count++;
+    }
+  }
+  return count;
+}
+const countTrues = (arr) => {
+  let count = 0;
+  for (const value of arr) {
+    if (value === true) {
+      count++;
+    }
+  }
+  return count;
+}
+const makeFriendly = (paragraph) => {
+  let result = '';
+  for (const char of paragraph) {
+    result += (char === '.') ? '!' : char;
+  }
+  return result;
+};
+const cubeAll = (nums) => {
+  return nums.map(num => num ** 3);
+};
+const addNoises = (animals) => {
+  const dogs = new Set(['Fido', 'Rolph', 'Maisie']);
+  const cats = new Set(['Garfield', 'Heathcliff']);
+  const dinos = new Set(['Barnie', 'Sharp Tooth']);
 
-
+  return animals.map(animal => {
+    if (dogs.has(animal)) return `${animal} says "Woof!"`;
+    if (cats.has(animal)) return `${animal} says "Meow!"`;
+    if (dinos.has(animal)) return `${animal} says "ROWR."`;
+    return animal;
+  });
+};
+function womenOnly(arr) {
+  return arr.filter(person => person.endsWith('F'));
+}
+function integersOnly(numbers) {
+  return numbers.filter(num => Number.isInteger(num));
+}
 /*********************************
  * OUR CODE BELOW; DO NOT TOUCH! *
  *********************************/
